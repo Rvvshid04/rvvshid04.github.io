@@ -11,36 +11,38 @@ interface Project {
 const projects: Project[] = [
   {
     year: '2024',
-    title: 'Portfolio Website',
-    builtWith: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/Rvvshid04/portfolio',
-    live: 'https://raashidarquil.com'
+    title: 'Project Placeholder 1',
+    builtWith: ['Placeholder', 'Demo'],
+    github: '#',
+    live: '#'
   },
   {
     year: '2024',
-    title: 'E-Commerce Platform',
-    builtWith: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Stripe'],
-    github: 'https://github.com/Rvvshid04/ecommerce',
-    live: 'https://shop.example.com'
+    title: 'Project Placeholder 2',
+    builtWith: ['Placeholder', 'Demo'],
+    github: '#',
+    live: '#'
   },
   {
     year: '2023',
-    title: 'Task Management App',
-    builtWith: ['React', 'Node.js', 'MongoDB', 'Express'],
-    github: 'https://github.com/Rvvshid04/task-manager'
+    title: 'Project Placeholder 3',
+    builtWith: ['Placeholder', 'Demo'],
+    github: '#',
+    live: '#'
   },
   {
     year: '2023',
-    title: 'Weather Dashboard',
-    builtWith: ['React', 'OpenWeather API', 'Chart.js'],
-    github: 'https://github.com/Rvvshid04/weather-dashboard',
-    live: 'https://weather.example.com'
+    title: 'Project Placeholder 4',
+    builtWith: ['Placeholder', 'Demo'],
+    github: '#',
+    live: '#'
   },
   {
     year: '2023',
-    title: 'AI Image Generator',
-    builtWith: ['Python', 'TensorFlow', 'Flask', 'React'],
-    github: 'https://github.com/Rvvshid04/ai-image-generator'
+    title: 'Project Placeholder 5',
+    builtWith: ['Placeholder', 'Demo'],
+    github: '#',
+    live: '#'
   }
 ]
 

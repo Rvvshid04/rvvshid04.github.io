@@ -41,11 +41,10 @@ const About = () => {
           {/* Right side - Portrait image */}
           <div className="md:w-1/2 relative group">
             <div className="relative overflow-hidden rounded-lg shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                alt="Portrait"
-                className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              <div className="w-full h-[500px] bg-gray-400 flex items-center justify-center">
+                {/* Placeholder for portrait image */}
+                <span className="text-gray-200 text-2xl">Portrait Placeholder</span>
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-indigo-500 rounded-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500" />
