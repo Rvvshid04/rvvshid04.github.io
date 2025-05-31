@@ -1,0 +1,136 @@
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+
+interface Project {
+  year: string
+  title: string
+  builtWith: string[]
+  github?: string
+  live?: string
+}
+
+const projects: Project[] = [
+  {
+    year: '2024',
+    title: 'Portfolio Website',
+    builtWith: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/Rvvshid04/portfolio',
+    live: 'https://raashidarquil.com'
+  },
+  {
+    year: '2024',
+    title: 'E-Commerce Platform',
+    builtWith: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Stripe'],
+    github: 'https://github.com/Rvvshid04/ecommerce',
+    live: 'https://shop.example.com'
+  },
+  {
+    year: '2023',
+    title: 'Task Management App',
+    builtWith: ['React', 'Node.js', 'MongoDB', 'Express'],
+    github: 'https://github.com/Rvvshid04/task-manager'
+  },
+  {
+    year: '2023',
+    title: 'Weather Dashboard',
+    builtWith: ['React', 'OpenWeather API', 'Chart.js'],
+    github: 'https://github.com/Rvvshid04/weather-dashboard',
+    live: 'https://weather.example.com'
+  },
+  {
+    year: '2023',
+    title: 'AI Image Generator',
+    builtWith: ['Python', 'TensorFlow', 'Flask', 'React'],
+    github: 'https://github.com/Rvvshid04/ai-image-generator'
+  }
+]
+
+const Projects = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-4 pt-24 pb-16">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+            Projects<span className="text-primary">.</span>
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            A collection of my work and personal projects. Each project represents a unique challenge
+            and learning opportunity, showcasing my skills in various technologies and frameworks.
+          </p>
+        </div>
+
+        {/* Projects Table */}
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Year
+                </th>
+                <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Title
+                </th>
+                <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Built With
+                </th>
+                <th className="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Link
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {projects.map((project, index) => (
+                <tr key={index} className="hover:bg-gray-50 transition-colors duration-200">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {project.year}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {project.title}
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.builtWith.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div className="flex items-center gap-3">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
+                        >
+                          <FaGithub className="w-5 h-5" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
+                        >
+                          <FaExternalLinkAlt className="w-5 h-5" />
+                        </a>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Projects 
