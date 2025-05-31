@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaArrowLeft, FaCalendarAlt, FaClock, FaTag, FaBookmark, FaShare, FaCheck } from 'react-icons/fa'
+import { FaArrowLeft, FaCalendarAlt, FaClock, FaTag, FaShare } from 'react-icons/fa'
 import { useState } from 'react'
 import { BlogPost as BlogPostType } from '../data/blogPosts'
 import NotionMarkdown from './NotionMarkdown'
@@ -9,9 +9,7 @@ interface BlogPostProps {
 }
 
 const BlogPost = ({ post }: BlogPostProps) => {
-  const [isBookmarked, setIsBookmarked] = useState(false)
   const [showShareTooltip, setShowShareTooltip] = useState(false)
-  const [showBookmarkTooltip, setShowBookmarkTooltip] = useState(false)
 
   const handleShare = async () => {
     try {
@@ -26,12 +24,6 @@ const BlogPost = ({ post }: BlogPostProps) => {
       setShowShareTooltip(true)
       setTimeout(() => setShowShareTooltip(false), 2000)
     }
-  }
-
-  const handleBookmark = () => {
-    setIsBookmarked(!isBookmarked)
-    setShowBookmarkTooltip(true)
-    setTimeout(() => setShowBookmarkTooltip(false), 2000)
   }
 
   return (

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaTrophy, FaTimes, FaEye, FaChevronLeft, FaChevronRight, FaHackerrank, FaLinkedin, FaBehance } from 'react-icons/fa'
+import { FaTrophy, FaTimes, FaEye, FaChevronLeft, FaChevronRight, FaHackerrank, FaBehance } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
 
 interface AchievementsModalProps {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaGraduationCap, FaCertificate, FaTimes, FaEye, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaGraduationCap, FaTimes, FaEye } from 'react-icons/fa'
 
 interface QualificationsModalProps {
   isOpen: boolean
