@@ -9,40 +9,30 @@ interface AchievementsModalProps {
 
 const achievements = [
   {
-    title: "Best Developer Award",
-    organization: "Tech Innovators Conference 2023",
-    description: "Recognized for outstanding contributions to open-source projects and innovative solutions.",
-    date: "December 2023",
+    title: "Achievement Placeholder 1",
+    organization: "Organization Placeholder 1",
+    description: "This is a placeholder achievement description. Replace with actual achievement details.",
+    date: "January 2024",
     images: [
-      "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      "https://placehold.co/600x400/gray/white?text=Achievement+1"
     ]
   },
   {
-    title: "Hackathon Winner",
-    organization: "CodeFest 2023",
-    description: "Led a team to victory in a 48-hour hackathon, developing an AI-powered productivity tool.",
-    date: "October 2023",
+    title: "Achievement Placeholder 2",
+    organization: "Organization Placeholder 2",
+    description: "This is a placeholder achievement description. Replace with actual achievement details.",
+    date: "February 2024",
     images: [
-      "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      "https://placehold.co/600x400/gray/white?text=Achievement+2"
     ]
   },
   {
-    title: "Top Contributor",
-    organization: "React Community",
-    description: "Recognized as a top contributor to the React ecosystem with multiple accepted PRs.",
-    date: "August 2023",
+    title: "Achievement Placeholder 3",
+    organization: "Organization Placeholder 3",
+    description: "This is a placeholder achievement description. Replace with actual achievement details.",
+    date: "March 2024",
     images: [
-      "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-    ]
-  },
-  {
-    title: "Excellence in Web Development",
-    organization: "Web Dev Summit 2023",
-    description: "Awarded for demonstrating exceptional skills in modern web development practices.",
-    date: "June 2023",
-    images: [
-      "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      "https://placehold.co/600x400/gray/white?text=Achievement+3"
     ]
   }
 ]

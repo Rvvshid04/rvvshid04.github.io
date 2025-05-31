@@ -7,130 +7,63 @@ interface QualificationsModalProps {
 }
 
 const qualifications = [
-  // Academic Qualifications
   {
-    title: "BSc (Hons) Software Engineering",
-    institution: "Kingston University",
+    title: "Academic Qualification Placeholder 1",
+    institution: "Institution Placeholder 1",
     date: "2021 - Present",
-    description: "Currently pursuing a degree in Software Engineering with a focus on modern development practices and emerging technologies. Key modules include Advanced Programming, Software Architecture, Cloud Computing, and Data Structures & Algorithms.",
-    location: "London, UK",
+    description: "This is a placeholder academic qualification description. Replace with actual qualification details.",
+    location: "Location Placeholder 1",
     type: "academic",
-    gpa: "3.8/4.0",
+    gpa: "Placeholder GPA",
     achievements: [
-      "Dean's List for Academic Excellence (2022, 2023)",
-      "Best Final Year Project Award",
-      "Student Representative for Software Engineering Department"
+      "Achievement Placeholder 1",
+      "Achievement Placeholder 2",
+      "Achievement Placeholder 3"
     ]
   },
   {
-    title: "Postgraduate Diploma in Marketing",
-    institution: "Chartered Institute of Marketing (CIM)",
+    title: "Academic Qualification Placeholder 2",
+    institution: "Institution Placeholder 2",
     date: "2020 - 2021",
-    description: "Completed advanced marketing studies covering strategic marketing, digital marketing, and marketing analytics. Specialized in digital transformation and data-driven marketing strategies.",
-    location: "Online",
+    description: "This is a placeholder academic qualification description. Replace with actual qualification details.",
+    location: "Location Placeholder 2",
     type: "academic",
-    gpa: "Distinction",
+    gpa: "Placeholder GPA",
     achievements: [
-      "Top 5% in Digital Marketing Strategy",
-      "Published research paper on AI in Marketing",
-      "Led marketing campaign for university tech startup"
+      "Achievement Placeholder 1",
+      "Achievement Placeholder 2",
+      "Achievement Placeholder 3"
     ]
   },
   {
-    title: "Advanced Diploma in Computer Science",
-    institution: "Sri Lanka Institute of Information Technology",
-    date: "2018 - 2020",
-    description: "Comprehensive study of computer science fundamentals including programming, databases, networking, and software development methodologies.",
-    location: "Colombo, Sri Lanka",
-    type: "academic",
-    gpa: "3.9/4.0",
-    achievements: [
-      "Best Student Award",
-      "Led development of college management system",
-      "Organized tech workshops for junior students"
-    ]
-  },
-
-  // Professional Certificates
-  {
-    title: "AWS Certified Solutions Architect - Professional",
-    institution: "Amazon Web Services",
-    date: "2023",
-    description: "Advanced certification demonstrating expertise in designing distributed systems on AWS. Covers advanced architectural patterns, security, and cost optimization.",
+    title: "Certificate Placeholder 1",
+    institution: "Institution Placeholder 1",
+    date: "2024",
+    description: "This is a placeholder certificate description. Replace with actual certificate details.",
     location: "Online",
     type: "certificate",
-    verification: "https://aws.amazon.com/verification",
+    verification: "#",
     skills: [
-      "Cloud Architecture",
-      "Security & Compliance",
-      "High Availability Design",
-      "Cost Optimization"
+      "Skill Placeholder 1",
+      "Skill Placeholder 2",
+      "Skill Placeholder 3"
     ],
-    certificateImage: "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    certificateImage: "https://placehold.co/600x400/gray/white?text=Certificate+1"
   },
   {
-    title: "Professional Scrum Master I (PSM I)",
-    institution: "Scrum.org",
-    date: "2023",
-    description: "Certification validating knowledge of Scrum framework and ability to facilitate Scrum teams. Focuses on servant leadership, facilitation, and coaching.",
+    title: "Certificate Placeholder 2",
+    institution: "Institution Placeholder 2",
+    date: "2024",
+    description: "This is a placeholder certificate description. Replace with actual certificate details.",
     location: "Online",
     type: "certificate",
-    verification: "https://scrum.org/verify",
+    verification: "#",
     skills: [
-      "Agile Methodologies",
-      "Team Facilitation",
-      "Sprint Planning",
-      "Scrum Ceremonies"
+      "Skill Placeholder 1",
+      "Skill Placeholder 2",
+      "Skill Placeholder 3"
     ],
-    certificateImage: "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Google Cloud Professional Developer",
-    institution: "Google Cloud",
-    date: "2023",
-    description: "Certification demonstrating expertise in building scalable and reliable applications using Google Cloud technologies. Covers cloud-native development and microservices architecture.",
-    location: "Online",
-    type: "certificate",
-    verification: "https://cloud.google.com/certification",
-    skills: [
-      "Cloud-Native Development",
-      "Microservices",
-      "Container Orchestration",
-      "Serverless Architecture"
-    ],
-    certificateImage: "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Microsoft Certified: Azure Solutions Architect Expert",
-    institution: "Microsoft",
-    date: "2023",
-    description: "Expert-level certification for designing and implementing solutions that run on Microsoft Azure. Focuses on compute, network, storage, and security solutions.",
-    location: "Online",
-    type: "certificate",
-    verification: "https://microsoft.com/verify",
-    skills: [
-      "Azure Architecture",
-      "Cloud Security",
-      "DevOps Integration",
-      "Hybrid Cloud Solutions"
-    ],
-    certificateImage: "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    title: "Oracle Certified Professional, Java SE 11 Developer",
-    institution: "Oracle",
-    date: "2022",
-    description: "Professional certification for Java developers demonstrating expertise in Java SE 11 development. Covers advanced Java features, concurrency, and performance optimization.",
-    location: "Online",
-    type: "certificate",
-    verification: "https://oracle.com/certification",
-    skills: [
-      "Java SE 11",
-      "Concurrency",
-      "Performance Tuning",
-      "Security Best Practices"
-    ],
-    certificateImage: "https://images.unsplash.com/photo-1606159068539-43f36b99d1b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    certificateImage: "https://placehold.co/600x400/gray/white?text=Certificate+2"
   }
 ]
 
