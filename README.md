@@ -21,3 +21,7 @@ Welcome to the repository for my personal portfolio website. This project is a w
 - **Frontend Framework:** Vite + React (with TypeScript)
 - **Styling:** Tailwind CSS
 
+## 📦 Deployment
+
+This site is deployed using GitHub Pages at rvvshid04.github.io
+

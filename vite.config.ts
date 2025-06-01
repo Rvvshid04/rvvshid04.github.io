@@ -7,13 +7,6 @@ export default defineConfig({
   base: '/',
   server: {
     port: 3000,
-    open: true,
-    proxy: {
-      '/Portfolio': {
-        target: '/',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/Portfolio/, '')
-      }
-    }
+    open: true
   }
 }) 
