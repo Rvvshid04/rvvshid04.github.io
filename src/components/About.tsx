@@ -20,10 +20,10 @@ const About = () => {
                 I'm a software engineering undergraduate at Kingston University, based in Kandy, Sri Lanka. My expertise lies in full-stack development with React, Node.js, and Python, along with data analytics using Pandas and Power BI.
               </p>
               <p className="text-lg">
-                With a Postgraduate Diploma in Marketing from CIM, I bring a unique blend of technical and strategic thinking. I'm currently expanding my skills in cloud technologies (AWS, Docker), advanced frontend frameworks (Vue.js, Redux), and backend technologies (Spring Boot, Django).
+                With a Postgraduate Diploma in Marketing from CIM, I bring a unique blend of technical and strategic thinking.
               </p>
               <p className="text-lg">
-                I'm passionate about creating efficient, user-friendly solutions and am always eager to learn new technologies. Whether you're looking for a developer with marketing insights or want to collaborate on interesting projects, I'd love to connect!
+                Whether you're looking for a developer with marketing insights or want to collaborate on interesting projects, I'd love to connect!
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-8">

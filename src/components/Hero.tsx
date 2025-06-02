@@ -17,7 +17,7 @@ const Hero = () => {
               Full Stack Developer
             </h2>
             <p className="text-gray-600 text-lg mb-8">
-              I build exceptional digital experiences that make an impact. Specializing in creating beautiful, functional, and user-centered websites and applications.
+              I build  functional and user-centered websites and applications.
             </p>
             
             {/* Social Links */}
