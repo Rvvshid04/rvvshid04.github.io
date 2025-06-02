@@ -6,10 +6,7 @@ import FeaturedProjects from './components/FeaturedProjects'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Blog from './components/Blog'
-import BlogPost from './components/BlogPost'
 import Projects from './pages/Projects'
-import { blogPosts } from './data/blogPosts'
 
 function App() {
   return (
