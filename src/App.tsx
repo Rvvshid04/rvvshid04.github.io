@@ -30,15 +30,7 @@ function App() {
                 </>
               }
             />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/projects" element={<Projects />} />
-            {blogPosts.map(post => (
-              <Route
-                key={post.id}
-                path={`/blog/${post.id}`}
-                element={<BlogPost post={post} />}
-              />
-            ))}
           </Routes>
         </div>
         <Footer />
