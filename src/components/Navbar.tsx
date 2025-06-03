@@ -24,6 +24,12 @@ const Navbar = () => {
   ]
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href === '/') {
+      // For Home button, just close mobile menu if open
+      setIsOpen(false)
+      return
+    }
+    
     if (href.startsWith('/#')) {
       e.preventDefault()
       setIsOpen(false)
