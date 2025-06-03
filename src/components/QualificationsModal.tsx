@@ -195,7 +195,7 @@ const QualificationsModal = ({ isOpen, onClose }: QualificationsModalProps) => {
                 <p className="text-primary font-medium mb-2">{qualification.institution}</p>
                 {qualification.description && qualification.description.includes('Relevant Coursework:') ? (
                   (() => {
-                    const [label, rest] = qualification.description.split('Relevant Coursework:');
+                    const [, rest] = qualification.description.split('Relevant Coursework:');
                     const courseworkItems = rest ? rest.split(',').map(item => item.trim()).filter(Boolean) : [];
                     return (
                       <div className="mb-2">
