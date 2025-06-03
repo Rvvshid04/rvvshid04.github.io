@@ -8,31 +8,47 @@ interface QualificationsModalProps {
 
 const qualifications = [
   {
-    title: "Academic Qualification Placeholder 1",
-    institution: "Institution Placeholder 1",
-    date: "2021 - Present",
-    description: "This is a placeholder academic qualification description. Replace with actual qualification details.",
-    location: "Location Placeholder 1",
+    title: "BSc (Hon) in Computer Science (Software Engineering) – Top Up",
+    institution: "Kingston University",
+    date: "September 2024 – 2025",
+    description: "Relevant Coursework: Programming III, Software Development Practices, Individual Project, Advanced Data Modelling",
+    location: "Kingston upon Thames, United Kingdom",
     type: "academic",
-    gpa: "Placeholder GPA",
     achievements: [
-      "Achievement Placeholder 1",
-      "Achievement Placeholder 2",
-      "Achievement Placeholder 3"
+      "Currently enrolled"
     ]
   },
   {
-    title: "Academic Qualification Placeholder 2",
-    institution: "Institution Placeholder 2",
-    date: "2020 - 2021",
-    description: "This is a placeholder academic qualification description. Replace with actual qualification details.",
-    location: "Location Placeholder 2",
+    title: "Pearson BTEC Level 5 Higher Nationals Diploma in Computing (Software Engineering)",
+    institution: "ESOFT Metro Campus",
+    date: "October 2022 – September 2024",
+    description: "Relevant Coursework: Networking, Database Design and Development, Security, SDLC, Computing Research Project (Pearson Set), Business Process Support, Systems Analysis and Design, User Experience and Interface Design, Discrete Mathematics, Data Structures and Algorithms, Applied Programming and Design Principles.",
+    location: "Kandy, Sri Lanka",
     type: "academic",
-    gpa: "Placeholder GPA",
     achievements: [
-      "Achievement Placeholder 1",
-      "Achievement Placeholder 2",
-      "Achievement Placeholder 3"
+      "Completed all modules"
+    ]
+  },
+  {
+    title: "Level 7 Postgraduate Diploma in Professional Marketing",
+    institution: "Chartered Institute of Marketing (CIM)",
+    date: "October 2022 – March 2024",
+    description: "Relevant Coursework: Applied Marketing, Planning Campaigns, Digital Marketing Techniques, Marketing & Digital Strategy, Innovation in Marketing, Managing Brands, Global Marketing Decisions, Corporate Digital Communications, Creating Entrepreneurial Change.",
+    location: "Berkshire, UK",
+    type: "academic",
+    achievements: [
+      "Completed with distinction"
+    ]
+  },
+  {
+    title: "Edexcel IGCSE & NCC Education International Foundation Diploma (Distinction)",
+    institution: "Gateway College Kandy",
+    date: "August 2019 – August 2022",
+    description: "",
+    location: "Kandy, Sri Lanka",
+    type: "academic",
+    achievements: [
+      "Distinction"
     ]
   },
   {
@@ -177,12 +193,25 @@ const QualificationsModal = ({ isOpen, onClose }: QualificationsModalProps) => {
                   <span className="text-sm text-gray-500">{qualification.date}</span>
                 </div>
                 <p className="text-primary font-medium mb-2">{qualification.institution}</p>
-                <p className="text-gray-600 mb-2">{qualification.description}</p>
-                <p className="text-sm text-gray-500 mb-3">{qualification.location}</p>
-                
-                {qualification.type === 'academic' && qualification.gpa && (
-                  <p className="text-sm font-medium text-gray-700 mb-3">GPA: {qualification.gpa}</p>
+                {qualification.description && qualification.description.includes('Relevant Coursework:') ? (
+                  (() => {
+                    const [label, rest] = qualification.description.split('Relevant Coursework:');
+                    const courseworkItems = rest ? rest.split(',').map(item => item.trim()).filter(Boolean) : [];
+                    return (
+                      <div className="mb-2">
+                        <span className="font-semibold text-gray-900">Relevant Coursework:</span>
+                        <ul className="list-disc list-inside text-xs text-gray-600 mt-1 ml-4">
+                          {courseworkItems.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })()
+                ) : (
+                  <p className="text-gray-600 mb-2">{qualification.description}</p>
                 )}
+                <p className="text-sm text-gray-500 mb-3">{qualification.location}</p>
                 
                 {qualification.type === 'certificate' && qualification.verification && (
                   <div className="flex gap-3 mb-3">
@@ -195,17 +224,6 @@ const QualificationsModal = ({ isOpen, onClose }: QualificationsModalProps) => {
                         View Certificate
                       </button>
                     )}
-                  </div>
-                )}
-
-                {qualification.achievements && (
-                  <div className="mt-3">
-                    <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Achievements:</h4>
-                    <ul className="list-disc list-inside space-y-1">
-                      {qualification.achievements.map((achievement, i) => (
-                        <li key={i} className="text-sm text-gray-600">{achievement}</li>
-                      ))}
-                    </ul>
                   </div>
                 )}
 

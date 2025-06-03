@@ -11,36 +11,43 @@ interface Project {
 const projects: Project[] = [
   {
     year: '2024',
-    title: 'Project Placeholder 1',
-    builtWith: ['Placeholder', 'Demo'],
+    title: 'Fundr',
+    builtWith: ['ReactJS', 'Tailwind CSS', 'Node.js (Express.js)', 'Supabase (PostgreSQL)', 'Git', 'GitHub', 'Axios'],
     github: '#',
     live: '#'
   },
   {
     year: '2024',
-    title: 'Project Placeholder 2',
-    builtWith: ['Placeholder', 'Demo'],
+    title: 'Pizza Ordering System',
+    builtWith: ['Java (Advanced concepts - Design Patterns)'],
     github: '#',
     live: '#'
   },
   {
     year: '2023',
-    title: 'Project Placeholder 3',
-    builtWith: ['Placeholder', 'Demo'],
+    title: 'Grifindo Payroll System',
+    builtWith: ['C#', 'Visual Studio', 'MS SQL Server'],
     github: '#',
     live: '#'
   },
   {
     year: '2023',
-    title: 'Project Placeholder 4',
-    builtWith: ['Placeholder', 'Demo'],
+    title: 'Photography Website',
+    builtWith: ['html5', 'css3', 'JavaScript', 'PHP', 'MySQL', 'Apache Server (WAMP stack)'],
     github: '#',
     live: '#'
   },
   {
-    year: '2023',
-    title: 'Project Placeholder 5',
-    builtWith: ['Placeholder', 'Demo'],
+    year: '2022',
+    title: 'eHab (Hackathon Winning Project)',
+    builtWith: ['Figma', 'PowerPoint'],
+    github: '#',
+    live: '#'
+  },
+  {
+    year: '2021',
+    title: 'Computer Hardware Workshop',
+    builtWith: ['PowerPoint', 'Word'],
     github: '#',
     live: '#'
   }
