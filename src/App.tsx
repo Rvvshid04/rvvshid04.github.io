@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Projects from './pages/Projects'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
+        <ScrollToTop />
       </div>
     </Router>
   )
