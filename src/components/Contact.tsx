@@ -76,14 +76,14 @@ const Contact = () => {
         {submitStatus === 'success' ? (
           <div className="space-y-4">
             <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg" role="alert">
-              <p className="font-medium">Thank you for your message!</p>
+              <p className="font-medium">Thank you for your message! Do note that this form functionality is developed using FormSubmit, and may have some issues, so if you don't receive a response, please contact me via email.</p>
             </div>
             <button
               onClick={handleNewMessage}
               className="btn-primary w-full flex items-center justify-center gap-2 text-lg bg-primary text-white hover:bg-primary/90"
               aria-label="Send another message"
             >
-              Send another message
+              Send another message.
             </button>
           </div>
         ) : (
