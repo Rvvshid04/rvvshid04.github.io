@@ -34,7 +34,7 @@ const projects: Project[] = [
     year: '2023',
     title: 'Photography Website',
     builtWith: ['html5', 'css3', 'JavaScript', 'PHP', 'MySQL', 'Apache Server (WAMP stack)'],
-    github: '#',
+    github: 'https://github.com/Rvvshid04/malcolm-lismore-photography-website',
     live: '#'
   },
   {

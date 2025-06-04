@@ -31,7 +31,7 @@ const projects = [
     description: 'Developed a fully functional website for Malcolm Lismore\'s photography services as part of a course project. Integrated key features such as a gallery, dynamic service cards with pricing, and a contact form.',
     image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Photography+Website',
     tags: ['html5', 'css3', 'JavaScript', 'PHP', 'MySQL', 'Apache Server'],
-    github: '#',
+    github: 'https://github.com/Rvvshid04/malcolm-lismore-photography-website',
     external: '#',
   }
 ]
