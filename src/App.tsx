@@ -8,6 +8,9 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Projects from './pages/Projects'
 import ScrollToTop from './components/ScrollToTop'
+import BlogPage from './pages/BlogPage'
+import Home from './pages/Home'
+import ServicePage from './pages/ServicePage'
 
 function App() {
   return (
@@ -16,19 +19,10 @@ function App() {
         <Navbar />
         <div className="flex-1">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <About />
-                  <FeaturedProjects />
-                  <Skills />
-                  <Contact />
-                </>
-              }
-            />
+            <Route path="/" element={<Home/>} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/service" element={<ServicePage/>} />
           </Routes>
         </div>
         <Footer />

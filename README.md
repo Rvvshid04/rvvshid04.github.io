@@ -12,6 +12,7 @@ Welcome to the repository for my personal portfolio website. This project is a w
 - **About Section:** Contains a brief introduction and currently displays a sample portrait image.
 - **Projects Section:** Highlights featured projects with navigation to a dedicated Projects page.
 - **Blog Page:** Lists blog posts using sample data. Will be expanded with real content soon.
+- **Service Page:** List all the services I offer.
 - **CV Download:** Offers access to a downloadable version of my CV.
 - **Achievements, Qualifications, and Certifications:** These sections currently contain placeholder content.
 - **Contact Page:** Includes a working form (with some known issues). Users can also contact me via email directly.

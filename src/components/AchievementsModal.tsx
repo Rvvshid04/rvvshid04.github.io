@@ -9,30 +9,39 @@ interface AchievementsModalProps {
 
 const achievements = [
   {
-    title: "Achievement Placeholder 1",
-    organization: "Organization Placeholder 1",
-    description: "This is a placeholder achievement description. Replace with actual achievement details.",
-    date: "January 2024",
+    title: "Recieved 'Merit' at the Inter Gatway Digital Art Competition 2020",
+    organization: "Gateway College",
+    description: "Designed a futuristic landscape of Sri Lanka in 2025. Admittedly looking back, it was far-fetched, but still won a 'Merit' didn't I?",
+    date: "February 2020",
     images: [
-      "https://placehold.co/600x400/gray/white?text=Achievement+1"
+      ""
     ]
   },
   {
-    title: "Achievement Placeholder 2",
-    organization: "Organization Placeholder 2",
-    description: "This is a placeholder achievement description. Replace with actual achievement details.",
-    date: "February 2024",
+    title: "Winner of the Intercampus Hackathon 2023, Software Engineering Category",
+    organization: "ESOFT METRO CAMPUS",
+    description: "Won the hackathon as part of a team of 5, presenting a mental health application called 'eHab', with the idea of monitoring local mental health situations",
+    date: "October 2023",
     images: [
-      "https://placehold.co/600x400/gray/white?text=Achievement+2"
+      ""
     ]
   },
   {
-    title: "Achievement Placeholder 3",
-    organization: "Organization Placeholder 3",
-    description: "This is a placeholder achievement description. Replace with actual achievement details.",
-    date: "March 2024",
+    title: "Achieved Distinction in Innovation in Marketing module",
+    organization: "Sri Lanka Institute of Marketing",
+    description: "Awarded a certificate at a ceremony by SLIM for gaining a distiction grade in a Level 6 CIM module - Innovation in Marketing",
+    date: "December 2023",
     images: [
-      "https://placehold.co/600x400/gray/white?text=Achievement+3"
+      ""
+    ]
+  },
+  {
+    title: "Achieved Distinction in Corporate Digital Communications module",
+    organization: "Sri Lanka Institute of Marketing",
+    description: "Awarded a certificate at a ceremony by SLIM for gaining a distiction grade in a Level 7 CIM module - Corporate Digital Communication",
+    date: "December 2023",
+    images: [
+      ""
     ]
   }
 ]
