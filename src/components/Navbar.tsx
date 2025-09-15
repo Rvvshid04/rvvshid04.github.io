@@ -16,7 +16,7 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: 'Home', href: '/#home' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/#about' },
     { name: 'Projects', href: '/#projects' },
     { name: 'Skills', href: '/#skills' },
@@ -85,6 +85,21 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+
+            <Link
+              to='/blog'
+              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+                Blog
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+              </Link>
+
+              <Link
+              to='/service'
+              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+                Service
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+              </Link>
+
             <a
               href="/cv.pdf"
               download
