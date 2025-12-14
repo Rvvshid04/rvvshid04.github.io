@@ -16,7 +16,7 @@ const projects = [
     image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Pizza+Ordering+System',
     tags: ['Auth0', 'React Vite', 'TailwindCSS', 'ExpressJS'],
     github: 'https://github.com/Rvvshid04/weather-app-fe',
-    external: 'rvvshid04.github.io/weather-app-fe/',
+    external: 'https://rvvshid04.github.io/weather-app-fe/',
   },
   {
     title: 'Grifindo Payroll System',
