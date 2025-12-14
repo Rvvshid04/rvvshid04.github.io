@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { FaLock, FaGraduationCap } from 'react-icons/fa'
+import { FaLock } from 'react-icons/fa'
 
 
 const skills = [

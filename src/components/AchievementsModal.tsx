@@ -40,41 +40,7 @@ const achievements = [
   }
 ]
 
-const Lightbox = ({ images, isOpen, onClose }: { images: string[], isOpen: boolean, onClose: () => void }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-  if (!isOpen) return null
-
-  const handlePrevious = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-  }
-
-  const handleNext = () => {
-    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-  }
-
-  return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center">
-      <div 
-        className="fixed inset-0 bg-black/90 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-      <div className="relative max-w-4xl w-full mx-4">
-        <button
-          onClick={onClose}
-          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
-          aria-label="Close lightbox"
-        >
-          <FaTimes size={24} />
-        </button>
-      </div>
-    </div>
-  )
-}
-
 const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
-  const [selectedAchievement, setSelectedAchievement] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState<'achievements' | 'social'>('achievements')
 
   if (!isOpen) return null
