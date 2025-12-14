@@ -3,20 +3,20 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
   {
-    title: 'Fundr',
-    description: 'Developed a web-based application for crowdsourced fundraising during the final-year SDP module. Contributed to the development of donation processing module, PayPal integration, email authentication, setting up the database, CRUD operations, campaign creation, campaign card listing components, among others.',
+    title: 'SmartDrive',
+    description: 'SmartDrive is a driving school management system meant to streamline the operations of the driving school and enhance the driving school experience for the student driver, instructor, and driving school staff (admin).',
     image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Fundr',
-    tags: ['ReactJS', 'Tailwind CSS', 'Node.js', 'Supabase', 'Git', 'GitHub', 'Axios'],
-    github: '#',
-    external: '#',
+    tags: ['ReactJS', 'Tailwind CSS', 'PayPal Gateway', 'Node.js', 'Supabase', 'Git', 'GitHub', 'Axios'],
+    github: 'https://github.com/Rvvshid04/smartdrive-frontend',
+    external: 'https://rvvshid04.github.io/smartdrive-frontend/',
   },
   {
-    title: 'Pizza Ordering System',
-    description: 'Developed as part of the "Programming III" coursework, this console-based GUI application allows users to order customizable pizzas. Implemented key design patterns, including Observer, Builder, and Decorator, to enhance code modularity and maintainability.',
+    title: 'Weather App Dashboard',
+    description: 'Developed a full-stack weather app dashboard showing recent weather of cities around the world taken from OpenWeatherMap API. Also integrated Auth0 with Multi-factor Authentication. And implemented data caching.',
     image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Pizza+Ordering+System',
-    tags: ['Java', 'Design Patterns'],
-    github: '#',
-    external: '#',
+    tags: ['Auth0', 'React Vite', 'TailwindCSS', 'ExpressJS'],
+    github: 'https://github.com/Rvvshid04/weather-app-fe',
+    external: 'rvvshid04.github.io/weather-app-fe/',
   },
   {
     title: 'Grifindo Payroll System',
@@ -32,7 +32,6 @@ const projects = [
     image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Photography+Website',
     tags: ['html5', 'css3', 'JavaScript', 'PHP', 'MySQL', 'Apache Server'],
     github: 'https://github.com/Rvvshid04/malcolm-lismore-photography-website',
-    external: '#',
   }
 ]
 
