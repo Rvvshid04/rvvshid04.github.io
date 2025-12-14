@@ -14,11 +14,11 @@ const Blog = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {blogPosts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )
