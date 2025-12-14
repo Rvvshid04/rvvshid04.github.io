@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaLock, FaGraduationCap } from 'react-icons/fa'
-import QualificationsModal from './QualificationsModal'
+
 
 const skills = [
   { name: 'HTML5', url: '#', colors: { bg: 'bg-[#e34f26]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#d13e1f]' } },
@@ -35,6 +35,7 @@ const skills = [
   { name: 'Firebase', url: '#', colors: { bg: 'bg-[#ffca28]', text: 'text-black', border: 'border-black/20', hover: 'hover:bg-[#e6b825]' }, isLocked: true },
   { name: 'Git', url: '#', colors: { bg: 'bg-[#f05032]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#e03e2e]' } },
   { name: 'GitHub', url: '#', colors: { bg: 'bg-[#181717]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#0d0c0c]' } },
+  { name: 'Render', url: '#', colors: { bg: 'bg-[#181717]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#0d0c0c]' } },
   { name: 'Docker', url: '#', colors: { bg: 'bg-[#2496ed]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#1d7ed8]' }, isLocked: true },
   { name: 'AWS', url: '#', colors: { bg: 'bg-[#232f3e]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#1a2530]' }, isLocked: true },
   { name: 'Nginx', url: '#', colors: { bg: 'bg-[#009639]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#007a2e]' }, isLocked: true },
@@ -49,8 +50,6 @@ const skills = [
 ]
 
 const Skills = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
   return (
     <section id="skills" className="py-20 bg-[#0f172a] font-sans" aria-labelledby="skills-heading">
       <div className="max-w-6xl mx-auto px-4">
@@ -78,21 +77,7 @@ const Skills = () => {
             </a>
           ))}
         </div>
-        <div className="flex justify-center mt-8">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            aria-label="View qualifications"
-          >
-            <FaGraduationCap className="w-5 h-5" />
-            <span>Qualifications +</span>
-          </button>
-        </div>
       </div>
-      <QualificationsModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
     </section>
   )
 }

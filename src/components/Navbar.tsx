@@ -15,14 +15,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/#about' },
-    { name: 'Projects', href: '/#projects' },
-    { name: 'Skills', href: '/#skills' },
-    { name: 'Contact', href: '/#contact' },
-  ]
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href === '/') {
       // For Home button, just close mobile menu if open
@@ -70,21 +62,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8" role="menubar" aria-label="Main menu">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group ${
-                  location.pathname === link.href ? 'text-indigo-500' : ''
-                }`}
-                onClick={(e) => handleNavClick(e, link.href)}
-                role="menuitem"
-                aria-label={`Go to ${link.name.toLowerCase()} section`}
-              >
-                {link.name}
+
+            <a
+              href='#projects'
+              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+                My Work
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+            </a>
 
             <Link
               to='/blog'
@@ -96,15 +80,23 @@ const Navbar = () => {
               <Link
               to='/service'
               className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
-                Service
+                Services
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
               </Link>
+
+              <a
+              href='#contact'
+              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+              </a>
 
             <a
               href="/cv.pdf"
               download
               className="inline-flex items-center gap-2 px-4 py-2 border-2 border-indigo-500 text-indigo-500 rounded-lg hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               role="menuitem"
+              target='_blank'
               aria-label="Download CV"
             >
               <FaFileDownload className="w-4 h-4" />
@@ -134,25 +126,53 @@ const Navbar = () => {
             aria-hidden={!isOpen}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
+                <a
+                  href='#projects'
                   className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
-                    location.pathname === link.href ? 'text-indigo-500 bg-gray-50' : ''
+                    location.pathname === '#projects' ? 'text-indigo-500 bg-gray-50' : ''
                   }`}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={(e) => handleNavClick(e, '#projects')}
                   role="menuitem"
-                  aria-label={`Go to ${link.name.toLowerCase()} section`}
                 >
-                  {link.name}
+                  My Work
+                </a>
+                <Link
+                  to='/blog'
+                  className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
+                    location.pathname === '/blog' ? 'text-indigo-500 bg-gray-50' : ''
+                  }`}
+                  onClick={(e) => handleNavClick(e, '/blog')}
+                  role="menuitem"
+                >
+                  Blog
                 </Link>
-              ))}
+                <Link
+                  to='/service'
+                  className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
+                    location.pathname === '/service' ? 'text-indigo-500 bg-gray-50' : ''
+                  }`}
+                  onClick={(e) => handleNavClick(e, '/service')}
+                  role="menuitem"
+                >
+                  Service
+                </Link>
+                <a
+                  href='#contact'
+                  className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
+                    location.pathname === '#contact' ? 'text-indigo-500 bg-gray-50' : ''
+                  }`}
+                  onClick={(e) => handleNavClick(e, '#contact')}
+                  role="menuitem"
+                >
+                  Contact
+                </a>
+          
               <a
                 href="/cv.pdf"
                 download
                 className="flex items-center gap-2 px-3 py-2 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md transition-colors duration-300"
                 role="menuitem"
+                target='_blank'
                 aria-label="Download CV"
               >
                 <FaFileDownload className="w-4 h-4" />

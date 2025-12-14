@@ -17,13 +17,8 @@ const About = () => {
             <div className="space-y-4 text-gray-300">
              
               <p className="text-lg">
-                I'm a software engineering undergraduate at Kingston University, based in Kandy, Sri Lanka. My expertise lies in full-stack development with React, Node.js, and Python, along with data analytics using Pandas and Power BI.
-              </p>
-              <p className="text-lg">
-                With a Postgraduate Diploma in Marketing from CIM, I bring a unique blend of technical and strategic thinking.
-              </p>
-              <p className="text-lg">
-                Whether you're looking for a developer with marketing insights or want to collaborate on interesting projects, I'd love to connect!
+                I’m a software engineering graduate from Kingston University, based in Sri Lanka.
+                I like learning new things, digging into problems, and taking the time to understand them properly. Outside of coding, I enjoy digital arts, languages, and reading. I’m currently focused on improving my development skills and exploring opportunities to share what I’ve learned through tutoring and small projects.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-8">
@@ -42,8 +37,7 @@ const About = () => {
           <div className="md:w-1/2 relative group">
             <div className="relative overflow-hidden rounded-lg shadow-xl">
               <div className="w-full h-[500px] bg-gray-400 flex items-center justify-center">
-                {/* Placeholder for portrait image */}
-                <span className="text-gray-200 text-2xl">Portrait Placeholder</span>
+                 <img src="./linkedin-pic.jpg" alt="" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>

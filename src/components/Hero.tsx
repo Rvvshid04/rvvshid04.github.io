@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Hero = () => {
   return (
@@ -14,11 +14,8 @@ const Hero = () => {
               Hi, I'm <span className="text-indigo-500">Raashid Arquil</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-700">
-              Full Stack Developer
+              Full Stack Developer | Market Analyst
             </h2>
-            <p className="text-gray-600 text-lg mb-8">
-              I build  functional and user-centered websites and applications.
-            </p>
             
             {/* Social Links */}
             <div className="flex justify-center gap-6 mb-8">
@@ -37,6 +34,14 @@ const Hero = () => {
                 className="text-gray-600 hover:text-indigo-500 transition-colors duration-300 transform hover:scale-110"
               >
                 <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://x.com/rvvshid_arq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-indigo-500 transition-colors duration-300 transform hover:scale-110"
+              >
+                <FaTwitter size={24} />
               </a>
             </div>
 

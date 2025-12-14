@@ -12,37 +12,31 @@ const achievements = [
     title: "Recieved 'Merit' at the Inter Gatway Digital Art Competition 2020",
     organization: "Gateway College",
     description: "Designed a futuristic landscape of Sri Lanka in 2025. Admittedly looking back, it was far-fetched, but still won a 'Merit' didn't I?",
-    date: "February 2020",
-    images: [
-      ""
-    ]
+    date: "February 2020"
   },
   {
     title: "Winner of the Intercampus Hackathon 2023, Software Engineering Category",
     organization: "ESOFT METRO CAMPUS",
-    description: "Won the hackathon as part of a team of 5, presenting a mental health application called 'eHab', with the idea of monitoring local mental health situations",
-    date: "October 2023",
-    images: [
-      ""
-    ]
+    description: "Won the hackathon as part of a team of 5, presenting a mental health app prototype called 'eHab', with the idea of monitoring local mental health situations",
+    date: "October 2023"
   },
   {
-    title: "Achieved Distinction in Innovation in Marketing module",
+    title: "Achieved 'Distinction' in Innovation in Marketing module",
     organization: "Sri Lanka Institute of Marketing",
     description: "Awarded a certificate at a ceremony by SLIM for gaining a distiction grade in a Level 6 CIM module - Innovation in Marketing",
-    date: "December 2023",
-    images: [
-      ""
-    ]
+    date: "December 2023"
   },
   {
-    title: "Achieved Distinction in Corporate Digital Communications module",
+    title: "Achieved 'Distinction' in Corporate Digital Communications module",
     organization: "Sri Lanka Institute of Marketing",
     description: "Awarded a certificate at a ceremony by SLIM for gaining a distiction grade in a Level 7 CIM module - Corporate Digital Communication",
-    date: "December 2023",
-    images: [
-      ""
-    ]
+    date: "December 2023"
+  },
+  {
+    title: "Passed the French Speaking test in my O/Ls!",
+    organization: "Gateway College",
+    description: "Take the wins where they come. Speaking French for iGCSEs...I think that'd be around A2? Didn't get a shiny certificate specifically for this but hey...its a win in my book.",
+    date: "Probably Early 2021"
   }
 ]
 
@@ -74,34 +68,6 @@ const Lightbox = ({ images, isOpen, onClose }: { images: string[], isOpen: boole
         >
           <FaTimes size={24} />
         </button>
-        <div className="relative">
-          <img
-            src={images[currentImageIndex]}
-            alt="Certificate"
-            className="w-full h-auto rounded-lg shadow-2xl"
-          />
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={handlePrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-colors"
-                aria-label="Previous image"
-              >
-                <FaChevronLeft size={20} />
-              </button>
-              <button
-                onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-colors"
-                aria-label="Next image"
-              >
-                <FaChevronRight size={20} />
-              </button>
-            </>
-          )}
-        </div>
-        <div className="text-white text-center mt-4">
-          Image {currentImageIndex + 1} of {images.length}
-        </div>
       </div>
     </div>
   )
@@ -185,14 +151,6 @@ const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
                   </div>
                   <p className="text-primary font-medium mb-2">{achievement.organization}</p>
                   <p className="text-gray-600 mb-4">{achievement.description}</p>
-                  <button
-                    onClick={() => setSelectedAchievement(index)}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors"
-                    aria-label={`View images for ${achievement.title}`}
-                  >
-                    <FaEye />
-                    <span>View Images</span>
-                  </button>
                 </div>
               ))}
             </div>
@@ -200,7 +158,7 @@ const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a
-                  href="https://www.hackerrank.com/arma2"
+                  href="https://www.hackerrank.com/profile/raashid_arq"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-primary/20 transition-colors hover:bg-gray-100"
@@ -212,7 +170,7 @@ const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
                   </div>
                 </a>
                 <a
-                  href="https://leetcode.com/arma2"
+                  href="https://leetcode.com/u/Rvvshid04/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-primary/20 transition-colors hover:bg-gray-100"
@@ -224,7 +182,7 @@ const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
                   </div>
                 </a>
                 <a
-                  href="https://www.behance.net/arma2"
+                  href="https://www.behance.net/raashidarquil"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-primary/20 transition-colors hover:bg-gray-100"
@@ -240,15 +198,6 @@ const AchievementsModal = ({ isOpen, onClose }: AchievementsModalProps) => {
           )}
         </div>
       </div>
-
-      {/* Lightbox */}
-      {selectedAchievement !== null && (
-        <Lightbox
-          images={achievements[selectedAchievement].images}
-          isOpen={true}
-          onClose={() => setSelectedAchievement(null)}
-        />
-      )}
     </div>
   )
 }
