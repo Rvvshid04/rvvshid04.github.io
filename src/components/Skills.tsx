@@ -1,4 +1,4 @@
-import { FaLock } from 'react-icons/fa'
+//import { FaLock } from 'react-icons/fa'
 
 
   //{ name: 'Django', url: '#', colors: { bg: 'bg-[#092e20]', text: 'text-white', border: 'border-white/20', hover: 'hover:bg-[#071a14]' }, isLocked: true },
@@ -71,9 +71,9 @@ const Skills = () => {
               aria-label={`Learn more about ${skill.name}`}
             >
               <span className="text-base font-medium">{skill.name}</span>
-              {skill.isLocked && (
+              {/* {skill.isLocked && (
                 <FaLock className="w-4 h-4" aria-hidden="true" />
-              )}
+              )} */}
             </a>
           ))}
         </div>
