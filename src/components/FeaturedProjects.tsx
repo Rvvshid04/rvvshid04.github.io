@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'SmartDrive',
     description: 'SmartDrive is a driving school management system meant to streamline the operations of the driving school and enhance the driving school experience for the student driver, instructor, and driving school staff (admin).',
-    image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Fundr',
+    image: './images/SmartDrive-landingpage.png',
     tags: ['ReactJS', 'Tailwind CSS', 'PayPal Gateway', 'Node.js', 'Supabase', 'Git', 'GitHub', 'Axios'],
     github: 'https://github.com/Rvvshid04/smartdrive-frontend',
     external: 'https://rvvshid04.github.io/smartdrive-frontend/',
@@ -13,7 +13,7 @@ const projects = [
   {
     title: 'Weather App Dashboard',
     description: 'Developed a full-stack weather app dashboard showing recent weather of cities around the world taken from OpenWeatherMap API. Also integrated Auth0 with Multi-factor Authentication. And implemented data caching.',
-    image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Pizza+Ordering+System',
+    image: './images/weather-app-dashboard.png',
     tags: ['Auth0', 'React Vite', 'TailwindCSS', 'ExpressJS'],
     github: 'https://github.com/Rvvshid04/weather-app-fe',
     external: 'https://rvvshid04.github.io/weather-app-fe/',
@@ -21,7 +21,7 @@ const projects = [
   {
     title: 'Grifindo Payroll System',
     description: 'Created a C#-based payroll system to streamline employee data management. Designed features for data input, storage in MS SQL Server, and automated calculations to generate accurate payroll reports.',
-    image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Grifindo+Payroll+System',
+    image: './images/Grifindo-salarydetails-UI.png',
     tags: ['C#', 'Visual Studio', 'MS SQL Server'],
     github: '#',
     external: '#',
@@ -29,7 +29,7 @@ const projects = [
   {
     title: 'Photography Website',
     description: 'Developed a fully functional website for Malcolm Lismore\'s photography services as part of a course project. Integrated key features such as a gallery, dynamic service cards with pricing, and a contact form.',
-    image: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Photography+Website',
+    image: './images/malcom-gallery.png',
     tags: ['html5', 'css3', 'JavaScript', 'PHP', 'MySQL', 'Apache Server'],
     github: 'https://github.com/Rvvshid04/malcolm-lismore-photography-website',
   }

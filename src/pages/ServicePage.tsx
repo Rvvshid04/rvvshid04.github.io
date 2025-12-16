@@ -53,8 +53,7 @@ const ServicePage = () =>{
                         </h2>
                         <p className="mb-6 text-lg max-w-2xl mx-auto">
                         If you're interested in one of my services, reach out directly via
-                        email. Let me know which service you’d like to learn more about,
-                        and I’ll get back to you as soon as possible.
+                        email. Let me know which service you’d like to learn more about.
                         </p>
                         <a
                         href="mailto:yourname@example.com?subject=Service%20Inquiry"

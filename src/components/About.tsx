@@ -37,7 +37,7 @@ const About = () => {
           <div className="md:w-1/2 relative group">
             <div className="relative overflow-hidden rounded-lg shadow-xl">
               <div className="w-full h-[500px] bg-gray-400 flex items-center justify-center">
-                 <img src="./linkedin-pic.jpg" alt="" />
+                 <img src="./images/linkedin-pic.jpg" alt="" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
