@@ -66,7 +66,8 @@ const Skills = () => {
               href={skill.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex items-center gap-2 ${skill.colors.bg} ${skill.colors.text} px-4 py-2 rounded-lg border ${skill.colors.border} ${skill.colors.hover} transition-all duration-300 hover:scale-105 hover:shadow-lg ${skill.isLocked ? 'opacity-75 cursor-not-allowed' : ''}`}
+              className={`group flex items-center gap-2 ${skill.colors.bg} ${skill.colors.text} px-4 py-2 rounded-lg border ${skill.colors.border} ${skill.colors.hover} transition-all duration-300 hover:scale-105 hover:shadow-lg `} 
+              // ${skill.isLocked ? 'opacity-75 cursor-not-allowed' : ''}
               role="listitem"
               aria-label={`Learn more about ${skill.name}`}
             >
