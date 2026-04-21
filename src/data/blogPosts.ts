@@ -1,77 +1,42 @@
-export interface BlogPost {
-  id: string
+export interface BlogPostMeta {
+  slug: string
   title: string
   excerpt: string
   coverImage: string
   date: string
   readTime: string
   tags: string[]
-  author: {
-    name: string
-    avatar: string
-    role: string
-  }
-  content: string
-  references: {
-    title: string
-    url: string
-  }[]
-  furtherReading: {
-    title: string
-    url: string
-  }[]
 }
 
-export const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPostMeta[] = [
   {
-    id: 'placeholder-1',
-    title: 'Blog Post Placeholder 1',
-    excerpt: 'This is a placeholder excerpt for the first blog post. Replace with your real blog content.',
-    coverImage: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Blog+1',
-    date: 'March 15, 2024',
-    readTime: '5 min read',
-    tags: ['Placeholder', 'Demo'],
-    author: {
-      name: 'Demo Author',
-      avatar: 'https://via.placeholder.com/150',
-      role: 'Demo Role'
-    },
-    content: 'This is a placeholder content for the first blog post. Replace with your real blog content.',
-    references: [],
-    furtherReading: []
-  },
-  {
-    id: 'placeholder-2',
-    title: 'Blog Post Placeholder 2',
-    excerpt: 'This is a placeholder excerpt for the second blog post. Replace with your real blog content.',
-    coverImage: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Blog+2',
-    date: 'March 10, 2024',
-    readTime: '5 min read',
-    tags: ['Placeholder', 'Demo'],
-    author: {
-      name: 'Demo Author',
-      avatar: 'https://via.placeholder.com/150',
-      role: 'Demo Role'
-    },
-    content: 'This is a placeholder content for the second blog post. Replace with your real blog content.',
-    references: [],
-    furtherReading: []
-  },
-  {
-    id: 'placeholder-3',
-    title: 'Blog Post Placeholder 3',
-    excerpt: 'This is a placeholder excerpt for the third blog post. Replace with your real blog content.',
-    coverImage: 'https://via.placeholder.com/600x300/94a3b8/ffffff?text=Blog+3',
-    date: 'March 5, 2024',
-    readTime: '5 min read',
-    tags: ['Placeholder', 'Demo'],
-    author: {
-      name: 'Demo Author',
-      avatar: 'https://via.placeholder.com/150',
-      role: 'Demo Role'
-    },
-    content: 'This is a placeholder content for the third blog post. Replace with your real blog content.',
-    references: [],
-    furtherReading: []
+    slug: 'AI-Generated-Blog-Post-As-A-Placeholder',
+    title: 'AI Generated Placeholder Blog',
+    excerpt:
+      'A practical checklist I use to keep my React pages quick, maintainable, and pleasant to navigate.',
+    coverImage: '/images/weather-app-dashboard.png',
+    date: 'April 21, 2026',
+    readTime: '4 min read',
+    tags: ['React', 'Performance', 'Frontend']
   }
-] 
+]
+
+const blogPostContentLoaders = import.meta.glob('../content/blog/*.md', {
+  query: '?raw',
+  import: 'default'
+}) as Record<string, () => Promise<string>>
+
+export const getBlogPostMetaBySlug = (slug: string) =>
+  blogPosts.find((post) => post.slug === slug)
+
+export const loadBlogPostContentBySlug = async (slug: string) => {
+  const path = `../content/blog/${slug}.md`
+  const loader = blogPostContentLoaders[path]
+
+  if (!loader) {
+    return null
+  }
+
+  const markdown = await loader()
+  return markdown
+}

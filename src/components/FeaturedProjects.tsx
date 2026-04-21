@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
@@ -36,15 +37,42 @@ const projects = [
 ]
 
 const FeaturedProjects = () => {
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="projects" className="py-20 bg-white font-sans">
+    <section id="projects" ref={sectionRef} className="py-20 bg-white font-sans">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900">Featured Projects<span className="text-primary">.</span></h2>
-        <p className="text-gray-600 text-lg mb-8">Here are some of my recent projects. Each project represents a unique challenge and learning opportunity.</p>
+        <h2 className={`text-3xl md:text-4xl font-extrabold mb-2 text-gray-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>Featured Projects<span className="text-primary">.</span></h2>
+        <p className={`text-gray-600 text-lg mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>Here are some of my recent projects. Each project represents a unique challenge and learning opportunity.</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
-            <div key={i} className="bg-[#1e293b] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div
+              key={i}
+              className={`bg-[#1e293b] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
               <div className="relative group">
                 <img src={project.image} alt={project.title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -73,15 +101,6 @@ const FeaturedProjects = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center mt-12">
-          <Link
-            to="/projects"
-            className="bg-background-light px-6 py-4 rounded-lg flex items-center gap-3 text-lg text-text border border-primary/10 hover:bg-primary/10 transition-all"
-          >
-            View All Projects
-            <FaExternalLinkAlt className="w-4 h-4" />
-          </Link>
-        </div>
       </div>
     </section>
   )

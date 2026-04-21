@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaBars, FaTimes, FaFileDownload } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -43,65 +43,94 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-2' 
+          ? 'bg-white/90 backdrop-blur-md shadow-md py-3' 
           : 'bg-transparent py-4'
       }`}
       role="navigation" 
       aria-label="Main navigation"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link 
+          {/* <Link 
             to="/" 
             className="text-xl font-bold text-gray-900 hover:text-indigo-500 transition-colors duration-300"
             aria-label="Go to home page"
           >
             Raashid<span className="text-indigo-500">.</span>
+          </Link> */}
+
+          <Link
+            to="/"
+            className="flex items-center hover:opacity-80 transition duration-300"
+            aria-label="Go to home page"
+          >
+            <img src="/images/RA-Logo-1.svg" alt="Raashid logo" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8" role="menubar" aria-label="Main menu">
+            
+            <Link
+              to='/'
+              className={`relative transition-colors duration-300 group ${
+                location.pathname === "/"
+                  ? "text-indigo-500"
+                  : "text-gray-600 hover:text-indigo-500"
+              }`}>
+                Home
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${
+                  location.pathname === "/"
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`}  />
+              </Link>
 
-            <a
-              href='#projects'
-              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
-                My Work
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-            </a>
+            <Link
+              to='/work'
+              className={`relative transition-colors duration-300 group ${
+                location.pathname === "/work"
+                  ? "text-indigo-500"
+                  : "text-gray-600 hover:text-indigo-500"
+              }`}>
+                Work
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${
+                  location.pathname === "/work"
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`} />
+              </Link>
 
             <Link
               to='/blog'
-              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+              className={`relative transition-colors duration-300 group ${
+                location.pathname === "/blog"
+                  ? "text-indigo-500"
+                  : "text-gray-600 hover:text-indigo-500"
+              }`}>
                 Blog
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
-              </Link>
-
-              <Link
-              to='/service'
-              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
-                Services
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${
+                  location.pathname === "/blog"
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`} />
               </Link>
 
               <a
-              href='#contact'
-              className='relative text-gray-600 hover:text-indigo-500 transition-colors duration-300 group'>
+              href='/contact'
+              className={`relative transition-colors duration-300 group ${
+                location.pathname === "/contact"
+                  ? "text-indigo-500"
+                  : "text-gray-600 hover:text-indigo-500"
+              }`}>
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${
+                  location.pathname === "/contact"
+                    ? "w-full"
+                    : "w-0 group-hover:w-full"
+                }`}  />
               </a>
 
-            <a
-              href="/cv.pdf"
-              download
-              className="inline-flex items-center gap-2 px-4 py-2 border-2 border-indigo-500 text-indigo-500 rounded-lg hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              role="menuitem"
-              target='_blank'
-              aria-label="Download CV"
-            >
-              <FaFileDownload className="w-4 h-4" />
-              <span>CV</span>
-            </a>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -126,16 +155,26 @@ const Navbar = () => {
             aria-hidden={!isOpen}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2">
-                <a
-                  href='#projects'
+                <Link
+                  to='/'
                   className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
-                    location.pathname === '#projects' ? 'text-indigo-500 bg-gray-50' : ''
+                    location.pathname === '/blog' ? 'text-indigo-500 bg-gray-50' : ''
                   }`}
-                  onClick={(e) => handleNavClick(e, '#projects')}
+                  onClick={(e) => handleNavClick(e, '/blog')}
                   role="menuitem"
                 >
-                  My Work
-                </a>
+                  Home
+                </Link>
+                <Link
+                  to='/work'
+                  className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
+                    location.pathname === '/work' ? 'text-indigo-500 bg-gray-50' : ''
+                  }`}
+                  onClick={(e) => handleNavClick(e, '/work')}
+                  role="menuitem"
+                >
+                  Work
+                </Link>
                 <Link
                   to='/blog'
                   className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
@@ -146,38 +185,16 @@ const Navbar = () => {
                 >
                   Blog
                 </Link>
-                <Link
-                  to='/service'
-                  className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
-                    location.pathname === '/service' ? 'text-indigo-500 bg-gray-50' : ''
-                  }`}
-                  onClick={(e) => handleNavClick(e, '/service')}
-                  role="menuitem"
-                >
-                  Service
-                </Link>
                 <a
-                  href='#contact'
+                  href='/contact'
                   className={`block px-3 py-2 text-gray-600 hover:text-indigo-500 hover:bg-gray-50 rounded-md transition-colors duration-300 ${
-                    location.pathname === '#contact' ? 'text-indigo-500 bg-gray-50' : ''
+                    location.pathname === '/contact' ? 'text-indigo-500 bg-gray-50' : ''
                   }`}
                   onClick={(e) => handleNavClick(e, '#contact')}
                   role="menuitem"
                 >
                   Contact
                 </a>
-          
-              <a
-                href="/cv.pdf"
-                download
-                className="flex items-center gap-2 px-3 py-2 border-2 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white rounded-md transition-colors duration-300"
-                role="menuitem"
-                target='_blank'
-                aria-label="Download CV"
-              >
-                <FaFileDownload className="w-4 h-4" />
-                <span>Download CV</span>
-              </a>
             </div>
           </div>
         )}

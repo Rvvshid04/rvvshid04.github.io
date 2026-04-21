@@ -17,7 +17,7 @@ const achievements = [
   {
     title: "Winner of the Intercampus Hackathon 2023, Software Engineering Category",
     organization: "ESOFT METRO CAMPUS",
-    description: "Won the hackathon as part of a team of 5, presenting a mental health app prototype called 'eHab', with the idea of monitoring local mental health situations",
+    description: "Won the hackathon as part of a team of 5, presenting a mental health app prototype called 'eHab', with the idea of monitoring various local mental health situations",
     date: "October 2023"
   },
   {

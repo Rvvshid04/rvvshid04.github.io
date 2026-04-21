@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-300 text-sm">
-            © {currentYear} Raashid Arquil. All rights reserved.
+            © {currentYear} Raashid Arquil. All Rights Reserved.
           </div>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="https://github.com/Rvvshid04" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-primary transition-colors duration-300">

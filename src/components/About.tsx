@@ -1,51 +1,78 @@
-import { useState } from 'react'
-import { FaTrophy } from 'react-icons/fa'
-import AchievementsModal from './AchievementsModal'
+import { useEffect, useRef, useState } from 'react'
+import { FaFileDownload } from 'react-icons/fa'
 
 const About = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.25 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="about" className="py-20 bg-[#0f172a]">
+    <section id="about" ref={sectionRef} className="py-20 bg-[#0f172a]">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left side - About text */}
-          <div className="md:w-1/2">
+          <div className={`md:w-1/2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6 text-white">
               About Me<span className="text-indigo-500">.</span>
             </h2>
             <div className="space-y-4 text-gray-300">
              
               <p className="text-lg">
-                I’m a software engineering graduate from Kingston University, based in Sri Lanka.
-                I like learning new things, digging into problems, and taking the time to understand them properly. Outside of coding, I enjoy digital arts, languages, and reading. I’m currently focused on improving my development skills and exploring opportunities to share what I’ve learned through tutoring and small projects.
+                I am a software engineering graduate from Kingston University, based in Sri Lanka.
+                I am especially interested in React development, problem solving, and creating projects
+                that balance thoughtful design with reliable functionality.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                aria-label="View achievements"
+            <div
+              className={`mt-8 transition-all duration-700 delay-200 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <a
+                href="/cv.pdf"
+                download
+                target="_blank"
+                aria-label="Download CV"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-indigo-500 text-indigo-300 rounded-lg hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/30"
               >
-                <FaTrophy className="w-5 h-5 animate-bounce" />
-                <span>Achievements +</span>
-              </button>
+                <FaFileDownload className="w-4 h-4" />
+                <span className="font-medium">Download CV</span>
+              </a>
             </div>
           </div>
 
           {/* Right side - Portrait image */}
-          <div className="md:w-1/2 relative group">
-            <div className="relative overflow-hidden rounded-lg shadow-xl">
-              <div className="w-full h-[500px] bg-gray-400 flex items-center justify-center">
-                 <img src="./images/linkedin-pic.jpg" alt="" />
+          <div
+            className={`md:w-1/2 flex justify-center relative transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0 rotate-0 scale-100' : 'opacity-0 translate-y-10 -rotate-6 scale-95'
+            }`}
+          >
+            <div className="relative overflow-hidden rounded-full shadow-xl w-64 h-64 md:w-72 md:h-72 border-4 border-indigo-500/40">
+              <div className="w-full h-full bg-gray-400 flex items-center justify-center">
+                 <img src="./images/linkedin-pic.jpg" alt="Portrait of Raashid" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/30 to-transparent" />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-indigo-500 rounded-lg transform rotate-12 group-hover:rotate-0 transition-transform duration-500" />
           </div>
         </div>
       </div>
-      <AchievementsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

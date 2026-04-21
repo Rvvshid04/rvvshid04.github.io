@@ -9,9 +9,6 @@ const Blog = () => {
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900">
             Blog<span className="text-indigo-500">.</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Insights, tutorials, and thoughts on software development, cloud computing, and technology trends.
-          </p>
         </div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

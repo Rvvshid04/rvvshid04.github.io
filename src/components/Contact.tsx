@@ -1,22 +1,42 @@
-import { useState } from 'react';
-import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { useEffect, useRef, useState } from 'react';
+import { FaEnvelope, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 
 const socials = [
   { name: 'Email', url: 'mailto:raashid.arq@gmail.com', icon: <FaEnvelope /> },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/raashid-arquil', icon: <FaLinkedin /> },
+  { name: 'GitHub', url: 'https://github.com/Rvvshid04', icon: <FaGithub /> },
+  { name: 'Twitter/X', url: 'https://x.com/rvvshid_arq', icon: <FaTwitter /> },
 ];
 
 const Contact = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [charCount, setCharCount] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    if (name === 'message') setCharCount(value.length);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -26,18 +46,17 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_64d1pa6',     
-        'template_m7idkak',      
+        'service_64d1pa6',
+        'template_m7idkak',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'RJS2kL5nX98Pfy_qo'       
+        'RJS2kL5nX98Pfy_qo'
       );
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setCharCount(0);
     } catch (error) {
       console.error(error);
       setSubmitStatus('error');
@@ -49,17 +68,26 @@ const Contact = () => {
   const handleNewMessage = () => setSubmitStatus('idle');
 
   return (
-    <section id="contact" className="py-20 bg-white font-sans" aria-labelledby="contact-heading">
+    <section ref={sectionRef} id="contact" className="py-20 bg-white font-sans" aria-labelledby="contact-heading">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 id="contact-heading" className="text-4xl md:text-5xl font-extrabold mb-4 text-text">
-          Contact me<span className="text-primary">.</span>
+        <h2
+          id="contact-heading"
+          className={`text-4xl md:text-5xl font-extrabold mb-4 text-text transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
+          Get in touch<span className="text-primary">.</span>
         </h2>
-        <p className="text-xl text-text-light mb-8">
-          I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+        <p
+          className={`text-xl text-text-light mb-8 transition-all duration-700 delay-100 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
+          I'm currently looking for new opportunities to build exciting projects. Whether you have a question, a project in mind, or just want to say hi, feel free to send me a message.
         </p>
 
         {submitStatus === 'success' ? (
-          <div className="space-y-4">
+          <div className={`space-y-4 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg" role="alert">
               <p className="font-medium">Thank you for your message! </p>
             </div>
@@ -72,7 +100,12 @@ const Contact = () => {
             </button>
           </div>
         ) : (
-          <form className="bg-background-light rounded-xl p-8 shadow-lg mb-8" onSubmit={handleSubmit}>
+          <form
+            className={`bg-background-light rounded-xl p-8 shadow-lg mb-8 transition-all duration-700 delay-150 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            onSubmit={handleSubmit}
+          >
             {submitStatus === 'error' && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6" role="alert">
                 <p>Sorry, there was an error sending your message. Please try again later.</p>
@@ -126,17 +159,12 @@ const Contact = () => {
                 name="message"
                 required
                 rows={5}
-                maxLength={500}
                 className="input-field w-full bg-white text-text border border-primary/10"
                 placeholder="Hello there, I would like to ask you about..."
                 value={formData.message}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                aria-describedby="message-counter"
               />
-              <div id="message-counter" className="text-right text-text-light text-xs mt-1" aria-live="polite">
-                {charCount}/500 characters
-              </div>
             </div>
 
             <button
@@ -150,8 +178,7 @@ const Contact = () => {
           </form>
         )}
 
-        <div className="mt-8">
-          <p className="text-text-light mb-4">Or contact me with...</p>
+        <div className={`mt-8 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="flex flex-wrap gap-4" role="list" aria-label="Social media links">
             {socials.map((social, i) => (
               <a
@@ -159,11 +186,14 @@ const Contact = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-background-light px-6 py-4 rounded-lg flex items-center gap-3 text-lg text-text border border-primary/10 hover:bg-primary/10 transition-all"
+                className={`bg-background-light px-6 py-4 rounded-lg flex items-center gap-3 text-lg text-text border border-primary/10 hover:bg-primary/10 transition-all duration-500 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+                style={{ transitionDelay: `${320 + i * 90}ms` }}
                 role="listitem"
                 aria-label={`Contact via ${social.name}`}
               >
-                <span aria-hidden="true">{social.icon}</span> {social.name} <span className="text-xl" aria-hidden="true">→</span>
+                <span aria-hidden="true">{social.icon}</span> {social.name} <span className="text-xl" aria-hidden="true"></span>
               </a>
             ))}
           </div>
