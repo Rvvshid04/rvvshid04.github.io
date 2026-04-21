@@ -6,7 +6,7 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ post }: BlogCardProps) => {
-  if (!post || !post.id) {
+  if (!post || !post.slug) {
     return (
       <div className="bg-red-100 text-red-700 p-4 rounded-lg shadow">
         <p>Blog post data is missing or invalid.</p>
@@ -16,7 +16,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
 
   return (
     <article className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <Link to={`/blog/${post.id}`} className="block">
+      <Link to={`/blog/${post.slug}`} className="block">
         <div className="relative h-48 overflow-hidden">
           <img
             src={post.coverImage}
