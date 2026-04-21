@@ -1,4 +1,4 @@
-# This is a placeholder blog. AI-generated.
+# AI Generated.
 
 Fast pages feel professional. They make your work easier to explore and keep people engaged.
 

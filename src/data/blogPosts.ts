@@ -8,6 +8,22 @@ export interface BlogPostMeta {
   tags: string[]
 }
 
+export interface BlogPostReference {
+  title: string
+  url: string
+}
+
+export interface BlogPost extends BlogPostMeta {
+  author: {
+    name: string
+    role: string
+    avatar: string
+  }
+  content: string
+  references: BlogPostReference[]
+  furtherReading?: BlogPostReference[]
+}
+
 export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'AI-Generated-Blog-Post-As-A-Placeholder',

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 const projects = [
