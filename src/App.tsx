@@ -9,6 +9,7 @@ const BlogPostPage = lazy(() => import('./pages/BlogPostPage'))
 const Home = lazy(() => import('./pages/Home'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
 const WorkPage = lazy(() => import('./pages/WorkPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 const AppLayout = () => {
   return (
@@ -22,6 +23,7 @@ const AppLayout = () => {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/contact" element={<ContactPage/>}/>
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </div>
