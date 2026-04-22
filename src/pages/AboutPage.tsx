@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaFileDownload, FaHackerrank, FaBehance, FaAward, FaMedal, FaStar, FaCertificate } from 'react-icons/fa'
+import { FaFileDownload, FaHackerrank, FaBehance, FaCertificate } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
 
 /* ─── Data ─────────────────────────────────────────────────────────────── */
