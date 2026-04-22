@@ -69,19 +69,17 @@ const Contact = () => {
 
   return (
     <section ref={sectionRef} id="contact" className="py-20 bg-white font-sans" aria-labelledby="contact-heading">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
         <h2
           id="contact-heading"
-          className={`text-4xl md:text-5xl font-extrabold mb-4 text-text transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
+          className={`text-4xl md:text-5xl font-extrabold mb-4 text-text transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
         >
           Get in touch<span className="text-primary">.</span>
         </h2>
         <p
-          className={`text-xl text-text-light mb-8 transition-all duration-700 delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
+          className={`text-xl text-text-light mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
         >
           I'm currently looking for new opportunities to build exciting projects. Whether you have a question, a project in mind, or just want to say hi, feel free to send me a message.
         </p>
@@ -101,9 +99,8 @@ const Contact = () => {
           </div>
         ) : (
           <form
-            className={`bg-background-light rounded-xl p-8 shadow-lg mb-8 transition-all duration-700 delay-150 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`bg-background-light rounded-xl p-8 shadow-lg mb-8 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             onSubmit={handleSubmit}
           >
             {submitStatus === 'error' && (
@@ -186,9 +183,8 @@ const Contact = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`bg-background-light px-6 py-4 rounded-lg flex items-center gap-3 text-lg text-text border border-primary/10 hover:bg-primary/10 transition-all duration-500 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
+                className={`bg-background-light px-6 py-4 rounded-lg flex items-center gap-3 text-lg text-text border border-primary/10 hover:bg-primary/10 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
                 style={{ transitionDelay: `${320 + i * 90}ms` }}
                 role="listitem"
                 aria-label={`Contact via ${social.name}`}

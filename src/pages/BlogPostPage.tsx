@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaArrowLeft, FaCalendarAlt, FaClock, FaTag } from 'react-icons/fa'
 import NotionMarkdown from '../components/NotionMarkdown'
+import Loader from '../components/Loader'
 import { getBlogPostMetaBySlug, loadBlogPostContentBySlug } from '../data/blogPosts'
 
 const BlogPostPage = () => {
@@ -10,6 +11,14 @@ const BlogPostPage = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   const post = getBlogPostMetaBySlug(slug)
+
+  useEffect(() => {
+    if (post) {
+      document.title = `${post.title} | Raashid Arquil`
+    } else {
+      document.title = "Blog Post | Raashid Arquil"
+    }
+  }, [post])
 
   useEffect(() => {
     let isMounted = true
@@ -34,7 +43,7 @@ const BlogPostPage = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-white pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Post not found.</h1>
           <Link to="/blog" className="text-indigo-600 hover:text-indigo-500">
             Back to blog
@@ -46,7 +55,7 @@ const BlogPostPage = () => {
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
         <Link
           to="/blog"
           className="group inline-flex items-center gap-2 text-gray-600 hover:text-indigo-500 transition-colors duration-300 mb-8"
@@ -85,11 +94,11 @@ const BlogPostPage = () => {
         <img src={post.coverImage} alt={post.title} className="w-full h-72 md:h-96 object-cover rounded-xl mb-10" />
 
         {!isLoading && content ? (
-          <article className="prose prose-lg max-w-none">
+          <article className="prose prose-lg max-w-none fade-in">
             <NotionMarkdown content={content} />
           </article>
         ) : (
-          <p className="text-gray-500">Loading article...</p>
+          <Loader text="Loading article..." />
         )}
       </div>
     </div>

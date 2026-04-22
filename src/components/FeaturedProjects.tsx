@@ -59,7 +59,7 @@ const FeaturedProjects = () => {
 
   return (
     <section id="projects" ref={sectionRef} className="py-20 bg-white font-sans">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
         <h2 className={`text-3xl md:text-4xl font-extrabold mb-2 text-gray-900 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>Featured Projects<span className="text-primary">.</span></h2>
         <p className={`text-gray-600 text-lg mb-8 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>Here are some of my recent projects. Each project represents a unique challenge and learning opportunity.</p>
         

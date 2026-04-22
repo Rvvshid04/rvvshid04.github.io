@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { FaArrowUp } from 'react-icons/fa'
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const { pathname } = useLocation()
+
+  // Scroll to top automatically when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {

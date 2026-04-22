@@ -3,7 +3,7 @@ const Footer = () => {
 
   return (
     <footer className="py-8 bg-[#0f172a] border-t border-[#1e293b]">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-300 text-sm">
             © {currentYear} Raashid Arquil. All Rights Reserved.

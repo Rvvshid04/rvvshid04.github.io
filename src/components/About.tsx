@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FaFileDownload } from 'react-icons/fa'
 
 const About = () => {
@@ -25,7 +26,7 @@ const About = () => {
 
   return (
     <section id="about" ref={sectionRef} className="py-20 bg-[#0f172a]">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left side - About text */}
           <div className={`md:w-1/2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
@@ -33,7 +34,7 @@ const About = () => {
               About Me<span className="text-indigo-500">.</span>
             </h2>
             <div className="space-y-4 text-gray-300">
-             
+
               <p className="text-lg">
                 I am a software engineering graduate from Kingston University, based in Sri Lanka.
                 I am especially interested in React development, problem solving, and creating projects
@@ -41,9 +42,8 @@ const About = () => {
               </p>
             </div>
             <div
-              className={`mt-8 transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`mt-8 flex flex-wrap items-center gap-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               <a
                 href="/cv.pdf"
@@ -55,18 +55,27 @@ const About = () => {
                 <FaFileDownload className="w-4 h-4" />
                 <span className="font-medium">Download CV</span>
               </a>
+
+              {/* More about me link */}
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-2 text-base font-medium text-indigo-400 hover:text-indigo-300 transition-colors duration-200"
+                aria-label="Read more about Raashid"
+              >
+                More about me
+                <span className="inline-block text-lg transition-transform duration-300 group-hover:translate-x-2">→</span>
+              </Link>
             </div>
           </div>
 
           {/* Right side - Portrait image */}
           <div
-            className={`md:w-1/2 flex justify-center relative transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0 rotate-0 scale-100' : 'opacity-0 translate-y-10 -rotate-6 scale-95'
-            }`}
+            className={`md:w-1/2 flex justify-center relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0 rotate-0 scale-100' : 'opacity-0 translate-y-10 -rotate-6 scale-95'
+              }`}
           >
-            <div className="relative overflow-hidden rounded-full shadow-xl w-64 h-64 md:w-72 md:h-72 border-4 border-indigo-500/40">
+            <div className="relative overflow-hidden rounded-full shadow-xl w-64 h-64 md:w-72 md:h-72 border-4 border-indigo-500/40 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-indigo-500/30">
               <div className="w-full h-full bg-gray-400 flex items-center justify-center">
-                 <img src="./images/linkedin-pic.jpg" alt="Portrait of Raashid" className="w-full h-full object-cover" />
+                <img src="./images/linkedin-pic.jpg" alt="Portrait of Raashid" className="w-full h-full object-cover" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/30 to-transparent" />
             </div>

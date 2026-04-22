@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Hero = () => {
@@ -28,7 +29,7 @@ const Hero = () => {
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#4f46e51f_1px,transparent_1px),linear-gradient(to_bottom,#4f46e51f_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="max-w-6xl mx-auto px-4 py-20 w-full relative z-10">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0 py-20 relative z-10">
         <div className="flex flex-col items-center text-center">
           {/* Text content */}
           <div className={`max-w-2xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -69,18 +70,18 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className={`flex justify-center gap-4 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <a
-                href="#projects"
+              <Link
+                to="/work"
                 className="px-6 py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 View My Work
-              </a>
-              <a
-                href="#contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="px-6 py-3 border-2 border-indigo-500 text-indigo-500 rounded-lg hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
           </div>
         </div>

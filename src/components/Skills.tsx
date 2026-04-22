@@ -140,7 +140,7 @@ const Skills = () => {
 
   return (
     <section id="skills" ref={sectionRef} className="py-20 bg-[#0f172a] font-sans">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full lg:w-[60%] mx-auto px-6 md:px-0">
 
         <h2 className={`text-3xl md:text-4xl font-extrabold mb-12 text-white transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           Tech Stack<span className="text-primary">.</span>
